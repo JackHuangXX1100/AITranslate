@@ -31,7 +31,7 @@ import java.awt.Color
 
 class TranslateAction : AnAction() {
 	companion object {
-		private val icon = IconLoader.getIcon("/icons/a8.png")
+        private val icon = IconLoader.getIcon("/icons/icon.png")
 	}
 
 	private lateinit var editor: Editor
