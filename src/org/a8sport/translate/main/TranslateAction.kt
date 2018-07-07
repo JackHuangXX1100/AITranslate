@@ -11,7 +11,7 @@ import com.intellij.openapi.util.IconLoader
 import com.intellij.ui.JBColor
 import org.a8sport.translate.bean.TranslationBean
 import org.a8sport.translate.net.TranslateCallBack
-import org.a8sport.translate.net.requestNetData
+import org.a8sport.translate.utils.requestNetData
 import java.awt.Color
 
 /**
@@ -30,60 +30,60 @@ import java.awt.Color
  */
 
 class TranslateAction : AnAction() {
-	companion object {
+    companion object {
         private val icon = IconLoader.getIcon("/icons/icon.png")
-	}
+    }
 
-	private lateinit var editor: Editor
-	private var latestClickTime = 0L  // 上一次的点击时间
+    private lateinit var editor: Editor
+    private var latestClickTime = 0L  // 上一次的点击时间
 
-	override fun actionPerformed(e: AnActionEvent) {
-		if (!isFastClick(1000)) {
-			/* 第一步 --> 选中单词 */
-			// 获取动作编辑器
-			editor = e.getData(PlatformDataKeys.EDITOR) ?: return
+    override fun actionPerformed(e: AnActionEvent) {
+        if (!isFastClick(1000)) {
+            /* 第一步 --> 选中单词 */
+            // 获取动作编辑器
+            editor = e.getData(PlatformDataKeys.EDITOR) ?: return
 
-			// 获取选择模式对象
-			val model = editor.selectionModel
+            // 获取选择模式对象
+            val model = editor.selectionModel
 
-			// 选中文字
-			val selectedText = model.selectedText ?: return
-			if (selectedText.isBlank()) return
+            // 选中文字
+            val selectedText = model.selectedText ?: return
+            if (selectedText.isBlank()) return
 
-			/* 第二步 ---> API查询 */
-			requestNetData(selectedText, object : TranslateCallBack<TranslationBean>() {
-				override fun onSuccess(result: TranslationBean) = showPopupWindow(result.toString())
-				override fun onFailure(message: String) = showPopupWindow(message)
-				override fun onError(message: String) = showPopupWindow(message)
-			})
-		}
-	}
+            /* 第二步 ---> API查询 */
+            requestNetData(selectedText, object : TranslateCallBack<TranslationBean>() {
+                override fun onSuccess(result: TranslationBean) = showPopupWindow(result.toString())
+                override fun onFailure(message: String) = showPopupWindow(message)
+                override fun onError(message: String) = showPopupWindow(message)
+            })
+        }
+    }
 
-	/**
-	 * 第三步 --> 弹出对话框
+    /**
+     * 第三步 --> 弹出对话框
 
-	 * @param result string result
-	 */
-	private fun showPopupWindow(result: String) {
-		ApplicationManager.getApplication().invokeLater {
-			JBPopupFactory.getInstance()
-					.createHtmlTextBalloonBuilder(result, icon, JBColor(Color(186, 238, 186), Color(73, 117, 73)), null)
-					.setFadeoutTime(15000)
-					.setHideOnAction(true)
-					.createBalloon()
-					.show(JBPopupFactory.getInstance().guessBestPopupLocation(editor), Balloon.Position.below)
-		}
-	}
+     * @param result string result
+     */
+    private fun showPopupWindow(result: String) {
+        ApplicationManager.getApplication().invokeLater {
+            JBPopupFactory.getInstance()
+                    .createHtmlTextBalloonBuilder(result, icon, JBColor(Color(238, 172, 62), Color(73, 117, 73)), null)
+                    .setFadeoutTime(15000)
+                    .setHideOnAction(true)
+                    .createBalloon()
+                    .show(JBPopupFactory.getInstance().guessBestPopupLocation(editor), Balloon.Position.below)
+        }
+    }
 
-	/**
-	 * 屏蔽多次选中
-	 */
-	private fun isFastClick(timeMillis: Long): Boolean {
-		val begin = System.currentTimeMillis()
-		val end = begin - latestClickTime
-		if (end in 1..(timeMillis - 1)) return true
-		latestClickTime = begin
-		return false
-	}
+    /**
+     * 屏蔽多次选中
+     */
+    private fun isFastClick(timeMillis: Long): Boolean {
+        val begin = System.currentTimeMillis()
+        val end = begin - latestClickTime
+        if (end in 1..(timeMillis - 1)) return true
+        latestClickTime = begin
+        return false
+    }
 }
 

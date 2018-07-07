@@ -12,28 +12,29 @@ import java.util.*
 
  * @author ice1000
  */
-const val PREFIX_NAME = "A8Translate"
+const val PREFIX_NAME = "Translate"
 
 object LocalData {
-	private val p = Properties()
-	private val f = File(System.getProperty("user.home") + "/a8temp.properties")
 
-	init {
-		if (!f.exists()) f.createNewFile()
-		p.load(FileReader(f))
-	}
+    private val p = Properties()
+    private val f = File(System.getProperty("user.home") + "/translate.properties")
 
-	fun store(@NonNls key: String, @NonNls value: String) {
-		p.put(StringUtils.uncapitalize(key), value)
-		save()
-	}
+    init {
+        if (!f.exists()) f.createNewFile()
+        p.load(FileReader(f))
+    }
 
-	fun clear() {
-		p.clear()
-		save()
-	}
+    fun store(@NonNls key: String, @NonNls value: String) {
+        p.put(StringUtils.uncapitalize(key), value)
+        save()
+    }
 
-	private fun save() = p.store(FileWriter(f), "Created by a8translate")
+    fun clear() {
+        p.clear()
+        save()
+    }
 
-	fun read(@NonNls key: String): String? = p.getProperty(StringUtils.uncapitalize(key))
+    private fun save() = p.store(FileWriter(f), "save translate worlds")
+
+    fun read(@NonNls key: String): String? = p.getProperty(StringUtils.uncapitalize(key))
 }
