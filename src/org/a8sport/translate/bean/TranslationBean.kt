@@ -1,0 +1,119 @@
+package org.a8sport.translate.bean
+
+/**
+ * Created by Pinger on 2016/12/10.
+ * 翻译结果javabean
+ * @author Pinger,ice1000
+ */
+
+
+/**
+ * 返回错误码的状态，有道返回
+ */
+const private val SUCCESS = 0  // 成功
+const private val QUERY_STRING_TOO_LONG = 20  // 要翻译的文本过长
+const private val CAN_NOT_TRANSLATE = 30  // 无法进行有效的翻译
+const private val INVALID_LANGUAGE = 40   // 不支持的语言类型
+const private val INVALID_KEY = 50  // 无效的key
+const private val NO_RESULT = 60   // 无词典结果
+const val EMPTY = "返回数据为空"
+
+
+class TranslationBean {
+
+    var basic: BasicBean? = null
+    var query: String? = null
+    var errorCode: Int = 0
+    var translation: List<String>? = null
+    var web: List<WebBean>? = null
+
+    inner class BasicBean(
+            var usPhonetic: String?,
+            var phonetic: String?,
+            var ukPhonetic: String?,
+            var explains: List<String>?
+    )
+
+    inner class WebBean(
+            var key: String?,
+            var value: List<String>?
+    )
+
+
+    /**
+     * 取错误信息
+     */
+    private val errorMessage: String by lazy {
+        when (errorCode) {
+            SUCCESS -> "成功"
+            QUERY_STRING_TOO_LONG -> "要翻译的文本过长"
+            CAN_NOT_TRANSLATE -> "无法进行有效的翻译"
+            INVALID_LANGUAGE -> "不支持的语言类型"
+            INVALID_KEY -> "无效的key"
+            NO_RESULT -> "无词典结果"
+            else -> "你选中的是什么鬼?"
+        }
+    }
+
+    /**
+     * 获取不同语言的翻译内容
+     */
+    private val phonetic: String by lazy {
+        val phonetic = StringBuilder()
+        basic?.usPhonetic?.let { phonetic.append("美式: [$it];") }
+        basic?.ukPhonetic?.let { phonetic.append("英式: [$it];") }
+        basic?.phonetic?.let { phonetic.append("发音: [$it];") }
+        phonetic.toString()
+    }
+
+    /**
+     * 获取翻译
+     */
+    private val explains: String by lazy {
+        val result = StringBuilder()
+        basic?.explains?.forEach { result.append(it).append("\n") }
+        result.toString()
+    }
+
+    /**
+     * 获取直接的翻译结果
+     */
+    private val translationResult: String by lazy {
+        val result = StringBuilder()
+        translation?.forEachIndexed { i, v -> result.append(if (0 == i) "" else ", ").append(v) }
+        if (null != translation) result.append(";")
+        result.toString()
+    }
+
+    /**
+     * 获取网络翻译结果
+     */
+    private val webResult: String by lazy {
+        val result = StringBuilder()
+        if (null != web) result.append("网络释义: \n")
+        web?.forEach {
+            result.append(it.key).append(": ")
+            it.value?.forEachIndexed { i, v -> result.append(if (0 == i) "" else ", ").append(v) }
+            result.append('\n')
+        }
+        result.toString()
+    }
+
+    private fun isSentence(query: String?) = null != query && ' ' in query.trim { it <= ' ' }
+
+    /**
+     * 结果
+     */
+    override fun toString(): String {
+        val string = StringBuilder()
+        if (SUCCESS != errorCode) string.append("错误代码: $errorCode\n$errorMessage")
+        else {
+            string.append(if (isSentence(query)) "$translationResult\n" else "$query: $translationResult\n")
+            string.append("$phonetic\n").append(explains).append(webResult)
+        }
+        println(translationResult)
+        println(query)
+        if (translationResult == "$query;" || string.isBlank()) return "抱歉, 你选的内容: $query\n翻译不了..."
+        return string.toString()
+    }
+}
