@@ -1,21 +1,12 @@
-# A8Translate
+# AITranslate
 
-[![JetBrains plugins](https://img.shields.io/jetbrains/plugin/log/9630-a8translate.svg)](https://plugins.jetbrains.com/plugin/9630-a8translate)
-[![JetBrains plugins](https://img.shields.io/jetbrains/plugin/v/9630-a8translate.svg)](https://plugins.jetbrains.com/plugin/9630-a8translate)
+一个无毒的 JetBrains 系列软件翻译插件。
 
-一个无毒的 JetBrains IDE 翻译插件。
+### 特性
+* 中英文自动识别翻译（中译英，英译中）。
+* 本地化（保存查询结果，便于下次快速查询和无网络连接时查询）。
+* 忽略英文大小写查询。
 
-原作者看起来并不准备接受我的 pull request (可能是 GitHub 僵尸用户)，因此我决定使用 Kotlin 重写。
-
-由于本插件面向中国用户，就不提供英文版 README 了。
-
-在编辑器中选中词语， **Alt+T**，然后就可以看到翻译结果了。
-
-大概是这样的：
-
-![](./art/0.png)
-
-## 特性
-
-+ 本地化（保存查询结果，便于下次快速查询/无网络连接时查询）。
-+ 忽略大小写
+### 使用
+* 在设置界面，Plugins -> install JetBrains plugin，搜索`AITranslate`，下载后重启项目。
+* 选中要翻译的文本，按住快捷键`Alt + T`就会进行查询翻译。
