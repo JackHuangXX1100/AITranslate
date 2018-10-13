@@ -1,23 +1,16 @@
-package org.a8sport.translate.bean
+package com.pinger.translate.bean
 
 /**
  * Created by Pinger on 2016/12/10.
- * 翻译结果javabean
- * @author Pinger,ice1000
- */
-
-
-/**
+ * 翻译结果的实体对象
  * 返回错误码的状态，有道返回
  */
-const private val SUCCESS = 0  // 成功
-const private val QUERY_STRING_TOO_LONG = 20  // 要翻译的文本过长
-const private val CAN_NOT_TRANSLATE = 30  // 无法进行有效的翻译
-const private val INVALID_LANGUAGE = 40   // 不支持的语言类型
-const private val INVALID_KEY = 50  // 无效的key
-const private val NO_RESULT = 60   // 无词典结果
-const val EMPTY = "返回数据为空"
-
+private const val SUCCESS = 0  // 成功
+private const val QUERY_STRING_TOO_LONG = 20  // 要翻译的文本过长
+private const val CAN_NOT_TRANSLATE = 30  // 无法进行有效的翻译
+private const val INVALID_LANGUAGE = 40   // 不支持的语言类型
+private const val INVALID_KEY = 50  // 无效的key
+private const val NO_RESULT = 60   // 无词典结果
 
 class TranslationBean {
 

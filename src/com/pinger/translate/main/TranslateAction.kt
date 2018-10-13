@@ -1,4 +1,4 @@
-package org.a8sport.translate.main
+package com.pinger.translate.main
 
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
@@ -7,11 +7,8 @@ import com.intellij.openapi.application.ApplicationManager
 import com.intellij.openapi.editor.Editor
 import com.intellij.openapi.ui.popup.Balloon
 import com.intellij.openapi.ui.popup.JBPopupFactory
-import com.intellij.openapi.util.IconLoader
 import com.intellij.ui.JBColor
-import org.a8sport.translate.bean.TranslationBean
-import org.a8sport.translate.net.TranslateCallBack
-import org.a8sport.translate.utils.requestNetData
+import com.pinger.translate.net.NetWorkUtils
 import java.awt.Color
 
 /**
@@ -30,9 +27,6 @@ import java.awt.Color
  */
 
 class TranslateAction : AnAction() {
-    companion object {
-        private val icon = IconLoader.getIcon("/icons/icon.png")
-    }
 
     private lateinit var editor: Editor
     private var latestClickTime = 0L  // 上一次的点击时间
@@ -51,11 +45,7 @@ class TranslateAction : AnAction() {
             if (selectedText.isBlank()) return
 
             /* 第二步 ---> API查询 */
-            requestNetData(selectedText, object : TranslateCallBack<TranslationBean>() {
-                override fun onSuccess(result: TranslationBean) = showPopupWindow(result.toString())
-                override fun onFailure(message: String) = showPopupWindow(message)
-                override fun onError(message: String) = showPopupWindow(message)
-            })
+            showPopupWindow(NetWorkUtils.requestGet(selectedText))
         }
     }
 
@@ -67,7 +57,7 @@ class TranslateAction : AnAction() {
     private fun showPopupWindow(result: String) {
         ApplicationManager.getApplication().invokeLater {
             JBPopupFactory.getInstance()
-                    .createHtmlTextBalloonBuilder(result, icon, JBColor(Color(238, 172, 62), Color(73, 117, 73)), null)
+                    .createHtmlTextBalloonBuilder(result, null, JBColor(Color(238, 172, 62), Color(73, 117, 73)), null)
                     .setFadeoutTime(15000)
                     .setHideOnAction(true)
                     .createBalloon()

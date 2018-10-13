@@ -25,7 +25,7 @@
   <actions>
     <action
             id="A8Translate.TranslateAction"
-            class="org.a8sport.translate.main.TranslateAction"
+            class="com.pinger.translate.main.TranslateAction"
             text="A8Translate"
             description="English translation into Chinese">
       <add-to-group group-id="EditMenu" anchor="first"/>

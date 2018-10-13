@@ -1,4 +1,4 @@
-package org.a8sport.translate.main
+package com.pinger.translate.main
 
 import org.apache.commons.lang.StringUtils
 import org.jetbrains.annotations.NonNls

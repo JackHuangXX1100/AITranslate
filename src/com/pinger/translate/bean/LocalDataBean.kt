@@ -1,23 +1,22 @@
-package org.a8sport.translate.bean
+package com.pinger.translate.bean
 
 import com.intellij.openapi.components.PersistentStateComponent
 import com.intellij.openapi.components.State
 import com.intellij.openapi.components.Storage
-import com.intellij.util.containers.HashMap
 import com.intellij.util.xmlb.XmlSerializerUtil
-import org.a8sport.translate.main.PREFIX_NAME
+import com.pinger.translate.main.PREFIX_NAME
 
 /**
  * Created by ice1000 on 2017/4/13.
-
  * @author ice1000
+ * Store translation data to local, serialize itself.
  */
 @State(name = PREFIX_NAME)
 @Storage("/translate_cache.xml")
 class LocalDataBean : PersistentStateComponent<LocalDataBean> {
-	private val storage = HashMap<String, String>(30)
+    private val storage = HashMap<String, String>(30)
 
-	override fun getState() = this
+    override fun getState() = this
 
-	override fun loadState(localDataBean: LocalDataBean) = XmlSerializerUtil.copyBean(localDataBean, this)
+    override fun loadState(localDataBean: LocalDataBean) = XmlSerializerUtil.copyBean(localDataBean, this)
 }
