@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="6ac19a4b-88c0-4470-8b17-908a40e76136" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,12 +35,16 @@
           <entry key="XML" value="7" />
         </counts>
       </usages-collector>
-      <usages-collector id="statistics.lifecycle.project" />
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+        </counts>
+      </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="1141" />
           <entry key="Kotlin" value="560" />
-          <entry key="PLAIN_TEXT" value="211" />
+          <entry key="PLAIN_TEXT" value="219" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -50,7 +53,7 @@
           <entry key="java" value="1141" />
           <entry key="kt" value="560" />
           <entry key="md" value="200" />
-          <entry key="txt" value="11" />
+          <entry key="txt" value="19" />
         </counts>
       </usages-collector>
     </session>
@@ -122,37 +125,6 @@
               <item name="AndroidTranslate" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="AndroidTranslate" type="2674bda8:ScopeViewTreeModel$GroupNode" />
             </path>
-            <path>
-              <item name="AndroidTranslate" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="AndroidTranslate" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="resources" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="AndroidTranslate" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="AndroidTranslate" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="AndroidTranslate" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="AndroidTranslate" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="com" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="AndroidTranslate" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="AndroidTranslate" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="com" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="pinger" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="AndroidTranslate" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="AndroidTranslate" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="com" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="pinger" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="translate" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -183,7 +155,8 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539445434707" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539445624236" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
@@ -202,7 +175,7 @@
   <component name="RunManager" selected="Plugin.Plugin">
     <configuration name="NetWorkUtils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.pinger.translate.net.NetWorkUtils" />
-      <module name="AndroidTranslate" />
+      <module name="AITranslate" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.pinger.translate.net.*" />
@@ -214,7 +187,7 @@
       </method>
     </configuration>
     <configuration name="Plugin" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
-      <module name="AndroidTranslate" />
+      <module name="AITranslate" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -ea" />
       <option name="PROGRAM_PARAMETERS" />
       <predefined_log_file id="idea.log" enabled="true" />
@@ -223,7 +196,7 @@
       </method>
     </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
-      <module name="AndroidTranslate" />
+      <module name="AITranslate" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -ea" />
       <option name="PROGRAM_PARAMETERS" />
       <predefined_log_file id="idea.log" enabled="true" />
@@ -287,7 +260,21 @@
       <option name="project" value="LOCAL" />
       <updated>1539444474959</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="更新md">
+      <created>1539445444457</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1539445444457</updated>
+    </task>
+    <task id="LOCAL-00007" summary="更新md">
+      <created>1539445455373</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1539445455373</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -339,7 +326,8 @@
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="更新本地仓库" />
     <MESSAGE value="修复失效的请求接口" />
-    <option name="LAST_COMMIT_MESSAGE" value="修复失效的请求接口" />
+    <MESSAGE value="更新md" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新md" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/.idea/vcs.xml">
