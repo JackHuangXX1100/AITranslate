@@ -1,19 +1,20 @@
 <idea-plugin>
-  <id>org.ice1000.a8translate</id>
-  <name>A8Translate</name>
-  <version>1.7</version>
-  <vendor email="ice1000kotlin@foxmail.com" url="http://ice1000.org/">千里冰封</vendor>
+  <id>com.pinger.translate</id>
+  <name>AITranslate</name>
+  <version>1.8</version>
+  <vendor email="wanitme@gmail.com" url="https://fungo.gitbook.io/devnote/">万合天宜</vendor>
 
   <description><![CDATA[
-      一款功能强大的翻译插件。<br>
-      原作: https://github.com/PingerOne/A8Translate<br>
-      GitHub: https://github.com/ice1000/A8Translate<br>
+      一个无毒的 JetBrains 系列软件翻译插件。<br>
+      GitHub: https://github.com/PingerOne/AITranslate<br>
 
-      作者: wanpingping, ice1000
+      作者: Pinger
     ]]></description>
 
   <change-notes><![CDATA[
-      1. 优化了错误处理（修复了一个 bug） #1
+      1. 更新了网络请求，查询翻译速度更快。
+      2. 修复了有道API失效的问题。
+      3. 更新了相关代码。
 ]]></change-notes>
 
   <idea-version since-build="145.0"/>
@@ -24,10 +25,10 @@
 
   <actions>
     <action
-            id="A8Translate.TranslateAction"
+            id="AITranslate.TranslateAction"
             class="com.pinger.translate.main.TranslateAction"
-            text="A8Translate"
-            description="English translation into Chinese">
+            text="AITranslate"
+            description="Chinese and English translation">
       <add-to-group group-id="EditMenu" anchor="first"/>
       <keyboard-shortcut keymap="$default" first-keystroke="alt t"/>
     </action>
