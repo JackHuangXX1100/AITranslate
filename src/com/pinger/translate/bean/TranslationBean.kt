@@ -95,6 +95,13 @@ class TranslationBean {
     private fun isSentence(query: String?) = null != query && ' ' in query.trim { it <= ' ' }
 
     /**
+     * 数据是否是成功的状态
+     */
+    fun isSuccess(): Boolean {
+        return errorCode == SUCCESS
+    }
+
+    /**
      * 结果
      */
     override fun toString(): String {

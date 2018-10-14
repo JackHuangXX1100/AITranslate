@@ -9,23 +9,30 @@ import java.util.*
 
 /**
  * Created by ice1000 on 2017/4/13.
-
- * @author ice1000
+ * 本地缓存工具类，将翻译过的单词存入到本地的properties文件中
  */
-const val PREFIX_NAME = "Translate"
-
 object LocalData {
 
     private val p = Properties()
-    private val f = File(System.getProperty("user.home") + "/translate.properties")
+    private val f = File(System.getProperty("user.home") + "/AITranslate_Cache.properties")
 
     init {
         if (!f.exists()) f.createNewFile()
         p.load(FileReader(f))
     }
 
+    private fun save() = p.store(FileWriter(f), "save translate worlds")
+
+    /**
+     * 读取保存过的记录
+     */
+    fun read(@NonNls key: String): String? = p.getProperty(StringUtils.uncapitalize(key))
+
+    /**
+     * 以键值对的形式保存查询单词的记录
+     */
     fun store(@NonNls key: String, @NonNls value: String) {
-        p.put(StringUtils.uncapitalize(key), value)
+        p[StringUtils.uncapitalize(key)] = value
         save()
     }
 
@@ -34,7 +41,4 @@ object LocalData {
         save()
     }
 
-    private fun save() = p.store(FileWriter(f), "save translate worlds")
-
-    fun read(@NonNls key: String): String? = p.getProperty(StringUtils.uncapitalize(key))
 }

@@ -1,7 +1,11 @@
 package com.pinger.translate.net;
 
+import com.fungo.baselib.manager.ThreadManager;
+import com.intellij.openapi.editor.Editor;
 import com.pinger.translate.bean.TranslationBean;
 import com.pinger.translate.main.LocalData;
+import com.pinger.translate.main.MarkDownGenerate;
+import com.pinger.translate.utils.TranslateUtils;
 import gherkin.deps.com.google.gson.Gson;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
@@ -37,36 +41,51 @@ public class NetWorkUtils {
      * 发起Get请求，同步请求后，返回Json数据
      * 对Json数据进行重新组合，生成正确格式的String返回
      */
-    public static String requestGet(String query) {
-        // 先查询本地是否有数据，如果有数据直接返回
-        String localData = LocalData.INSTANCE.read(query);
-        if (!TextUtils.isEmpty(localData)) {
-            // TODO 还要判断一下本地数据的code是不是有问题
-            return new Gson().fromJson(localData, TranslationBean.class).toString();
-        }
+    public static void requestGet(Editor editor, String query) {
+        ThreadManager.INSTANCE.runOnSubThread(() -> {
 
-        // 本地没有数据话再查询服务器
-        String salt = String.valueOf(System.currentTimeMillis());
-        String from = "auto";
-        String to = "auto";
-        String sign = md5(YOU_DAO_APP_ID + query + salt + YOU_DAO_APP_KEY);
-        Map<String, String> params = new HashMap<>();
-        params.put("q", query);
-        params.put("from", from);
-        params.put("to", to);
-        params.put("sign", sign);
-        params.put("salt", salt);
-        params.put("appKey", YOU_DAO_APP_ID);
+            // 先查询本地是否有数据，如果有数据直接返回
+            String localData = LocalData.INSTANCE.read(query);
+            if (!TextUtils.isEmpty(localData)) {
+                TranslationBean bean = new Gson().fromJson(localData, TranslationBean.class);
+                if (bean.isSuccess()) {
+                    System.out.println("查询历史纪录成功：" + bean.toString());
+                    TranslateUtils.INSTANCE.showPopupWindow(editor, bean.toString());
+                    return;
+                }
+            }
 
-        String result = requestForHttp(BASE_URL, params);
-        System.out.println("请求结果：" + result);
+            // 本地没有数据话再查询服务器
+            String salt = String.valueOf(System.currentTimeMillis());
+            String from = "auto";
+            String to = "auto";
+            String sign = md5(YOU_DAO_APP_ID + query + salt + YOU_DAO_APP_KEY);
+            Map<String, String> params = new HashMap<>();
+            params.put("q", query);
+            params.put("from", from);
+            params.put("to", to);
+            params.put("sign", sign);
+            params.put("salt", salt);
+            params.put("appKey", YOU_DAO_APP_ID);
 
-        if (!TextUtils.isEmpty(result)) {
-            LocalData.INSTANCE.store(query, result);
-            return new Gson().fromJson(result, TranslationBean.class).toString();
-        } else {
-            return DATA_EMPTY;
-        }
+            String result = requestForHttp(BASE_URL, params);
+            System.out.println("请求结果：" + result);
+
+            if (!TextUtils.isEmpty(result)) {
+                // 保存数据到本地
+                LocalData.INSTANCE.store(query, result);
+
+                result = new Gson().fromJson(result, TranslationBean.class).toString();
+
+                // 保存数据到本地历史纪录
+                if (!MarkDownGenerate.isSaved(query)) {
+                    MarkDownGenerate.saveWords(query, result);
+                }
+            } else {
+                result = DATA_EMPTY;
+            }
+            TranslateUtils.INSTANCE.showPopupWindow(editor, result);
+        });
     }
 
     /**
