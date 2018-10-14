@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6ac19a4b-88c0-4470-8b17-908a40e76136" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/pinger/translate/net/ThreadManager.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/pinger/translate/utils/TranslateUtils.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/pinger/translate/bean/LocalDataBean.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/pinger/translate/bean/TranslationBean.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pinger/translate/bean/TranslationBean.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/pinger/translate/main/LocalData.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pinger/translate/main/LocalCache.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/pinger/translate/main/MarkDownGenerate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pinger/translate/main/MarkDownGenerate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/pinger/translate/main/TranslateAction.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pinger/translate/main/TranslateAction.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/pinger/translate/net/NetWorkUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pinger/translate/net/NetWorkUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/pinger/translate/test/TestMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pinger/translate/test/TestMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jar/AITranslate.jar" beforeDir="false" afterPath="$PROJECT_DIR$/jar/AITranslate.jar" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -85,7 +77,7 @@
           <entry key="java" value="484" />
           <entry key="kt" value="324" />
           <entry key="md" value="20" />
-          <entry key="txt" value="56" />
+          <entry key="txt" value="67" />
           <entry key="xml" value="131" />
         </counts>
       </usages-collector>
@@ -93,7 +85,7 @@
         <counts>
           <entry key="JAVA" value="484" />
           <entry key="Kotlin" value="324" />
-          <entry key="PLAIN_TEXT" value="86" />
+          <entry key="PLAIN_TEXT" value="97" />
           <entry key="XML" value="131" />
         </counts>
       </usages-collector>
@@ -118,92 +110,7 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/pinger/translate/bean/TranslationBean.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2500">
-              <caret line="100" column="19" selection-start-line="100" selection-start-column="19" selection-end-line="100" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/pinger/translate/main/MarkDownGenerate.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1550">
-              <caret line="62" column="28" selection-start-line="62" selection-start-column="28" selection-end-line="62" selection-end-column="28" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/pinger/translate/main/LocalCache.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="16" column="91" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="91" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/pinger/translate/main/TranslateAction.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="15" column="3" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
-              <folding>
-                <element signature="e#35#284#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/pinger/translate/net/NetWorkUtils.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1650">
-              <caret line="87" column="11" selection-start-line="87" selection-start-column="11" selection-end-line="87" selection-end-column="11" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/pinger/translate/net/ThreadManager.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="11" selection-start-line="11" selection-end-line="11" />
-              <folding>
-                <element signature="e#35#223#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/pinger/translate/test/TestMain.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="13" selection-start-line="13" selection-end-line="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/pinger/translate/utils/TranslateUtils.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="15" selection-start-line="15" selection-end-line="15" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -275,82 +182,6 @@
               <item name="AITranslate" type="b2602c69:ProjectViewProjectNode" />
               <item name="AITranslate" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="AITranslate" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AITranslate" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AITranslate" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AITranslate" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AITranslate" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AITranslate" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AITranslate" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AITranslate" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="pinger" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AITranslate" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AITranslate" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="pinger" type="462c0819:PsiDirectoryNode" />
-              <item name="translate" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AITranslate" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AITranslate" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="pinger" type="462c0819:PsiDirectoryNode" />
-              <item name="translate" type="462c0819:PsiDirectoryNode" />
-              <item name="bean" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AITranslate" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AITranslate" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="pinger" type="462c0819:PsiDirectoryNode" />
-              <item name="translate" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AITranslate" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AITranslate" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="pinger" type="462c0819:PsiDirectoryNode" />
-              <item name="translate" type="462c0819:PsiDirectoryNode" />
-              <item name="net" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AITranslate" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AITranslate" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="pinger" type="462c0819:PsiDirectoryNode" />
-              <item name="translate" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AITranslate" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AITranslate" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="pinger" type="462c0819:PsiDirectoryNode" />
-              <item name="translate" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -370,7 +201,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539498921699" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539499149710" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -554,12 +385,18 @@
       <option name="project" value="LOCAL" />
       <updated>1539448256365</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="添加将翻译记录生成md">
+      <created>1539498971850</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1539498971851</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1977612" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -638,7 +475,8 @@
     <MESSAGE value="更新插件描述" />
     <MESSAGE value="添加本地安装的Jar包" />
     <MESSAGE value="添加将翻译记录生成文档" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加将翻译记录生成文档" />
+    <MESSAGE value="添加将翻译记录生成md" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加将翻译记录生成md" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/.idea/vcs.xml">
